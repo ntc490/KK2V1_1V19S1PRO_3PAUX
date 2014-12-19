@@ -25,6 +25,11 @@ liv1:
 	rvflagand flagSelfLevelOn, flagB, flagC
 
 
+	;--- determine profile ---
+	rvbrflagfalse flagSwitchSSPI, liv2
+	rvflagnot flagProfileP1, flagAuxOn
+
+liv2:
 
 	;--- turn on led if armed ---
 

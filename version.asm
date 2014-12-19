@@ -42,5 +42,5 @@ Ver1: call GetButtons
 	ret		
 
 sho1:   .db "HW Ver 2.1.X",0,0
-sho2:	.db "FW Ver 1.19S1 Pro",0
+sho2:	.db "FW Ver 1.19S1 Pro +",0
 sho3:	.db "Steveis",0

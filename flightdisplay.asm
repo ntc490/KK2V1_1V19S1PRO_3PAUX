@@ -73,7 +73,7 @@ udp23:
 	lrv Y1, 0
 	lrv FontSelector, f6x8
 
-	rvbrflagtrue flagAuxOn, udp23d
+	rvbrflagfalse flagProfileP1, udp23d
 	mPrintString udp57
 	rjmp udp23c
 udp23d:
@@ -106,7 +106,8 @@ udp23c:
 udp23f:
 	rvbrflagfalse flagSelfLevelOn, udp12   ; If self level is NOT On, it is "Off"
 
-	rvflagand flagA, flagAuxOn, flagSwitchSSPI
+	rvflagnot flagB, flagProfileP1
+	rvflagand flagA, flagB, flagSwitchSSPI
 	rvbrflagtrue flagA, udp12a
 
 	rvbrflagtrue flagSLPGZero, udp12	   ; If Profile 1 SL P Gain is zero then self level is "Off"

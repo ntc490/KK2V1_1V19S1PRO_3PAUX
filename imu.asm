@@ -269,7 +269,7 @@ im7:	b16fdiv RxRoll, 4			;Right align to the 16.4 multiply usable bit limit.
 	b16fdiv RxYaw, 4
 
 	rvbrflagfalse flagSwitchSSPI, im9	;use Profile 1 SS & PI if false
-	rvbrflagfalse flagAuxOn, im9	;SwitchSSPI is true so check if Aux switch is off to use Profile 1 SS & PI
+	rvbrflagtrue flagProfileP1, im9	;SwitchSSPI is true so check the profile
 	rjmp switchedP2						;use Profile 2 SS & PI
 
 	;use Profile 1 SS & PI
