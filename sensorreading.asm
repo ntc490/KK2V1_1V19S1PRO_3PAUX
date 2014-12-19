@@ -36,7 +36,7 @@ adc1:	;log timeout error here
 	b16store BatteryVoltage
 	b16add BatteryVoltage, BattAdcTrim, BatteryVoltage
 
-	rvflagnot flagA, flagAuxOn
+	rvflagnot flagA, flagSelfLevelOn
 	rvflagand flagB, flagArmed, flagA	; only update max and min if armed and self level off
 	rvbrflagfalse flagB, adc20
 
