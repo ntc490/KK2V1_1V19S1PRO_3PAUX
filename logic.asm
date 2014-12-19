@@ -1,9 +1,8 @@
-
 Logic:
 
 	;--- live update ---
 
-	rvbrflagtrue flagArmed, liv1		;skip all if armed	
+	rvbrflagtrue flagArmed, liv1		;skip all if armed
 
 	b16dec LiveUpdateTimer			;set flagLcdUpdate every second
 	b16clr Temp
@@ -17,7 +16,7 @@ liv1:
 
 	;--- determine if selflevel is on ---
 
-	rvflagand flagA, flagSelflevelType, flagStickCommandSelflevelOn
+	rvflagand flagA, flagSelflevelType, flagStickCommandSelfLevelOn
 	rvflagnot flagC, flagSelflevelType
 	rvflagand flagB, flagC, flagAuxOn
 	rvflagor  flagC, flagA, flagB
@@ -35,4 +34,3 @@ liv1:
 
 log1:	LedOn
 	ret
-
