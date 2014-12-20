@@ -83,6 +83,8 @@ reset:	ldi t,low(ramend)	;initalize stack pointer
 
 	rvsetflagfalse flagPwmGenM7M8
 	rvsetflagfalse flagSelfLevelAlwaysOn
+	rvsetflagfalse flagAuxMidPlus
+	rvsetflagfalse flagAuxMidPlusOldState
 
 	lrv Status, 0
 	lrv StatusOldState, 0 
@@ -200,6 +202,10 @@ ma8:
 	rvflagand flagA, flagA, flagB 
 	rvflagor  flagLcdUpdate, flagLcdUpdate, flagA 
 	rvflagand flagAuxOnOldState, flagAuxOn, flagAuxOn
+
+	rvflageor flagA, flagAuxMidPlus, flagAuxMidPlusOldState
+	rvflagor  flagLcdUpdate, flagLcdUpdate, flagA
+	rvmov     flagAuxMidPlusOldState, flagAuxMidPlus
 
 	rvbrflagfalse flagLcdUpdate, ma3		;Update LCD once if flagLcdUpdate is true 
 	rvsetflagfalse flagLcdUpdate

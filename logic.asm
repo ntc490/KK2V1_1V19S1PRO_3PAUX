@@ -27,7 +27,7 @@ liv1:
 
 	;--- determine profile ---
 	rvbrflagfalse flagSwitchSSPI, liv2
-	rvflagnot flagProfileP1, flagAuxOn
+	rvflagnot flagProfileP1, flagAuxMidPlus
 
 liv2:
 

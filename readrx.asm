@@ -837,6 +837,15 @@ rx21:	rcall gt1m1			;sanitize
 gt9m3:	clr yh				;store in register
 	b16store RxAux
 
+	rvsetflagfalse flagAuxMidPlus
+
+	ldz -75
+	cp  xl, zl
+	cpc xh, zh
+	brlt gt9m4
+	rvsetflagtrue flagAuxMidPlus
+gt9m4:
+
 	;--- AUX2 ---
 
 	rvbrflagtrue flagCppmOn, rx21aaaa	;if we are using CPPM, SBux or Satellite, process Aux 2, 3 & 4

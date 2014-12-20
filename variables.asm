@@ -364,6 +364,8 @@ RamVariableEnumerate8 flagStickCommandSelfLevelOn
 
 RamVariableEnumerate8 flagAuxOn
 RamVariableEnumerate8 flagAuxOnOldState
+RamVariableEnumerate8 flagAuxMidPlus
+RamVariableEnumerate8 flagAuxMidPlusOldState
 
 RamVariableEnumerate8 ButtonDelay
 
